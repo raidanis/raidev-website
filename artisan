@@ -1,0 +1,36 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__.'/vendor/autoload.php';
+
+/*
+|--------------------------------------------------------------------------
+| Resolve The Application
+|--------------------------------------------------------------------------
+|
+| This bootstrap file will load the environment and create an instance
+| of the Laravel application. We just need to use the application to
+| resolve the service so we can run the command.
+|
+*/
+
+$app = require_once __DIR__.'/bootstrap/app.php';
+
+/*
+|--------------------------------------------------------------------------
+| Run The Artisan Application
+|--------------------------------------------------------------------------
+|
+| When we run the "artisan" command, the application will resolve and use
+| the `Artisan` service on the application service container to run the
+| command. We will pass in the CLI "signature" to this command so that
+| it "knows" which command to execute when called by this CLI script.
+|
+*/
+
+$kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
+
+exit($kernel->handle(
+    $input = new Symfony\Component\Console\Input\ArgvInput,
+    new Symfony\Component\Console\Output\ConsoleOutput
+));
