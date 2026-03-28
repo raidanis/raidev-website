@@ -1,8 +1,8 @@
 [phases.install]
 cmds = [
   "mkdir -p /var/log/nginx && mkdir -p /var/cache/nginx",
-  "mkdir -p bootstrap/cache",
-  "chmod -R 775 bootstrap/cache",
+  "mkdir -p bootstrap/cache storage/logs storage/framework/cache storage/framework/sessions storage/framework/views",
+  "chmod -R 775 bootstrap/cache storage",
   "composer install --ignore-platform-reqs",
   "npm i"
 ]
