@@ -9,5 +9,6 @@ cmds = [
 
 [phases.build]
 cmds = [
-  "npm run build"
+  "npm run build",
+  "chmod -R 775 public/build"
 ]
