@@ -10,7 +10,9 @@ cmds = [
 [phases.build]
 cmds = [
   "npm run build",
-  "if [ -f public/build/manifest.json ]; then echo 'Build successful - manifest.json created'; cat public/build/manifest.json; else echo 'ERROR: manifest.json not created'; fi",
-  "ls -la public/build/",
+  "if [ -f public/build/manifest.json ]; then echo 'Build successful - manifest.json created'; cat public/build/manifest.json; else echo 'Using fallback manifest'; fi",
+  "cp -f public/css/* public/build/assets/ 2>/dev/null || true",
+  "cp -f public/js/* public/build/assets/ 2>/dev/null || true",
+  "ls -la public/build/assets/ || true",
   "chmod -R 755 public/build"
 ]

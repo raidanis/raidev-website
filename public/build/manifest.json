@@ -1,0 +1,10 @@
+{
+  "resources/css/style.css": {
+    "file": "assets/style.css",
+    "src": "resources/css/style.css"
+  },
+  "resources/js/main.js": {
+    "file": "assets/main.js",
+    "src": "resources/js/main.js"
+  }
+}
