@@ -15,7 +15,8 @@ export default defineConfig({
         outDir: 'public/build',
         emptyOutDir: true,
         manifest: true,
-        minify: 'terser',
+        minify: false,
+        sourcemap: false,
         rollupOptions: {
             output: {
                 manualChunks: undefined,
