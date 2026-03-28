@@ -10,5 +10,7 @@ cmds = [
 [phases.build]
 cmds = [
   "npm run build",
+  "test -f public/build/manifest.json || echo 'WARNING: manifest.json not found!'",
+  "ls -la public/build/ || echo 'public/build directory not found'",
   "chmod -R 775 public/build"
 ]
