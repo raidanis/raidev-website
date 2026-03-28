@@ -6,7 +6,7 @@
     <title>@yield('title') - RAIdev</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Orbitron:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    @vite(['resources/css/style.css', 'resources/js/main.js'])
     @stack('styles')
 </head>
 <body>
@@ -78,7 +78,6 @@
         </div>
     </footer>
 
-    <script src="{{ asset('js/main.js') }}"></script>
     @stack('scripts')
 </body>
 </html>
