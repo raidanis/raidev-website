@@ -9,27 +9,20 @@ export default defineConfig({
                 'resources/js/main.js',
             ],
             refresh: true,
-            valetTls: false,
         }),
     ],
-    server: {
-        host: '0.0.0.0',
-        port: 5173,
-        strictPort: false,
-    },
     build: {
         outDir: 'public/build',
         emptyOutDir: true,
-        manifest: 'manifest.json',
+        manifest: true,
+        minify: 'terser',
         rollupOptions: {
             output: {
                 manualChunks: undefined,
+                entryFileNames: 'assets/[name]-[hash].js',
+                chunkFileNames: 'assets/[name]-[hash].js',
+                assetFileNames: 'assets/[name]-[hash][extname]',
             },
-        },
-    },
-    resolve: {
-        alias: {
-            '@': '/resources',
         },
     },
 })
