@@ -1,8 +1,9 @@
 {
   "build": {
-    "builder": "nixpacks"
+    "builder": "nixpacks",
+    "buildCommand": "composer install --no-dev"
   },
   "deploy": {
-    "startCommand": "php -S 0.0.0.0:${PORT} public/index.php"
+    "startCommand": "php -S 0.0.0.0:${PORT} -t public"
   }
 }
